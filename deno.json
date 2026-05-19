@@ -1,6 +1,7 @@
 {
+  "unstable": ["kv"],
   "tasks": {
-    "dev": "deno run --unstable-kv -N main.ts",
+    "dev": "deno run -N main.ts",
     "format": "deno fmt && deno lint"
   },
   "fmt": {
