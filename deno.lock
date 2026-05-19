@@ -1,0 +1,44 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@eveporcello/sing@*": "0.1.0",
+    "jsr:@eveporcello/sing@0.1": "0.1.0",
+    "jsr:@luca/cases@1": "1.0.0",
+    "jsr:@openai/openai@*": "6.38.0",
+    "jsr:@std/assert@1": "1.0.15",
+    "jsr:@std/internal@^1.0.12": "1.0.12",
+    "jsr:@std/path@*": "1.1.4"
+  },
+  "jsr": {
+    "@eveporcello/sing@0.1.0": {
+      "integrity": "ce78834fa77a9f776951dd127eecc74a214f1f26b4e8fd658cb5238f42104069"
+    },
+    "@luca/cases@1.0.0": {
+      "integrity": "b5f9471f1830595e63a2b7d62821ac822a19e16899e6584799be63f17a1fbc30"
+    },
+    "@openai/openai@6.38.0": {
+      "integrity": "d01e3e09b51572cc371bce37a784b45f4046a03ccb54adecff02080f7979e2e4"
+    },
+    "@std/assert@1.0.15": {
+      "integrity": "d64018e951dbdfab9777335ecdb000c0b4e3df036984083be219ce5941e4703b",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/internal@1.0.12": {
+      "integrity": "972a634fd5bc34b242024402972cd5143eac68d8dffaca5eaa4dba30ce17b027"
+    },
+    "@std/path@1.1.4": {
+      "integrity": "1d2d43f39efb1b42f0b1882a25486647cb851481862dc7313390b2bb044314b5",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@eveporcello/sing@0.1",
+      "jsr:@std/assert@1"
+    ]
+  }
+}
