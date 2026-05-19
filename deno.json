@@ -2,14 +2,17 @@
   "unstable": ["kv"],
   "tasks": {
     "dev": "deno run -N main.ts",
-    "format": "deno fmt && deno lint"
+    "format": "deno fmt && deno lint",
+    "doc": "deno doc --html --name='Math Utilities' --output=./docs/ mod.ts",
+    "doc:lint": "deno doc --lint mod.ts"
   },
   "fmt": {
-    "options": {
-      "useTabs": false,
-      "lineWidth": 80,
-      "indentWidth": 2
-    }
+    "useTabs": false,
+    "lineWidth": 80,
+    "indentWidth": 2,
+    "exclude": [
+      "*.test.ts"
+    ]
   },
   "imports": {
     "sing": "jsr:@eveporcello/sing@^0.1.0",
