@@ -1,3 +1,3 @@
-import { startServer } from "./server.ts";
+import app from "./hono.ts";
 
-startServer();
+Deno.serve(app.fetch);

@@ -1,7 +1,7 @@
 {
   "unstable": ["kv"],
   "tasks": {
-    "dev": "deno run -N main.ts",
+    "dev": "deno run -N -R --watch main.ts",
     "format": "deno fmt && deno lint",
     "doc": "deno doc --html --name='Math Utilities' --output=./docs/ mod.ts",
     "doc:lint": "deno doc --lint mod.ts"
@@ -9,13 +9,12 @@
   "fmt": {
     "useTabs": false,
     "lineWidth": 80,
-    "indentWidth": 2,
-    "exclude": [
-      "*.test.ts"
-    ]
+    "indentWidth": 2
   },
   "imports": {
-    "sing": "jsr:@eveporcello/sing@^0.1.0",
-    "@std/assert": "jsr:@std/assert@1"
+    "@std/assert": "jsr:@std/assert@1",
+    "hono": "npm:hono",
+    "zod": "npm:zod",
+    "@hono/zod-validator": "npm:@hono/zod-validator"
   }
 }

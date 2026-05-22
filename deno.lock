@@ -1,18 +1,16 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@eveporcello/sing@*": "0.1.0",
-    "jsr:@eveporcello/sing@0.1": "0.1.0",
     "jsr:@luca/cases@1": "1.0.0",
     "jsr:@openai/openai@*": "6.38.0",
     "jsr:@std/assert@1": "1.0.15",
     "jsr:@std/internal@^1.0.12": "1.0.12",
-    "jsr:@std/path@*": "1.1.4"
+    "jsr:@std/path@*": "1.1.4",
+    "npm:@hono/zod-validator@*": "0.8.0_hono@4.12.18_zod@4.1.12",
+    "npm:hono@*": "4.12.18",
+    "npm:zod@*": "4.1.12"
   },
   "jsr": {
-    "@eveporcello/sing@0.1.0": {
-      "integrity": "ce78834fa77a9f776951dd127eecc74a214f1f26b4e8fd658cb5238f42104069"
-    },
     "@luca/cases@1.0.0": {
       "integrity": "b5f9471f1830595e63a2b7d62821ac822a19e16899e6584799be63f17a1fbc30"
     },
@@ -35,10 +33,27 @@
       ]
     }
   },
+  "npm": {
+    "@hono/zod-validator@0.8.0_hono@4.12.18_zod@4.1.12": {
+      "integrity": "sha512-5uS4S1/LKtZQYvD4BtpPUFkOv8d1wNxHHrChm26buMiEYc1FrHWvDUaKVBwkiVtvSExHSpLGDvcnpI2Copyj9w==",
+      "dependencies": [
+        "hono",
+        "zod"
+      ]
+    },
+    "hono@4.12.18": {
+      "integrity": "sha512-RWzP96k/yv0PQfyXnWjs6zot20TqfpfsNXhOnev8d1InAxubW93L11/oNUc3tQqn2G0bSdAOBpX+2uDFHV7kdQ=="
+    },
+    "zod@4.1.12": {
+      "integrity": "sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ=="
+    }
+  },
   "workspace": {
     "dependencies": [
-      "jsr:@eveporcello/sing@0.1",
-      "jsr:@std/assert@1"
+      "jsr:@std/assert@1",
+      "npm:@hono/zod-validator@*",
+      "npm:hono@*",
+      "npm:zod@*"
     ]
   }
 }
