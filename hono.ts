@@ -4,7 +4,7 @@ import { logger } from "hono/logger";
 import { HTTPException } from "hono/http-exception";
 import { verifyApiKey } from "./middleware.ts";
 import { createBookController } from "./controller/bookController.ts";
-import { BookService } from "./service/bookService.ts";
+import { BookService } from "./service/BookService.ts";
 import { BookKvRepository } from "./repository/BookKvRepository.ts";
 
 const app = new Hono().basePath("api");

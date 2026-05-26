@@ -1,5 +1,5 @@
 import { Book, CreateBookDto, UpdateBookDto } from "../model/book.ts";
-import { BookRepository } from "../repository/interface/bookRepository.ts";
+import { BookRepository } from "../repository/interface/BookRepository.ts";
 
 export class BookService {
   constructor(private readonly repo: BookRepository) {}

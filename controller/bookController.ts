@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { BookService } from "../service/bookService.ts";
+import { BookService } from "../service/BookService.ts";
 import { zValidator } from "@hono/zod-validator";
 import { Book, CreateBookSchema, UpdateBookSchema } from "../model/book.ts";
 import { ApiResponse } from "../shared/types.ts";
