@@ -2,15 +2,10 @@ import { Hono } from "hono";
 import { poweredBy } from "hono/powered-by";
 import { logger } from "hono/logger";
 import { HTTPException } from "hono/http-exception";
-import { zValidator } from "@hono/zod-validator";
-import z from "zod";
-import book from "./route/book.ts";
 import { verifyApiKey } from "./middleware.ts";
-
-const schema = z.object({
-  id: z.string(),
-  password: z.string(),
-});
+import { createBookController } from "./controller/bookController.ts";
+import { BookService } from "./service/bookService.ts";
+import { BookKvRepository } from "./repository/BookKvRepository.ts";
 
 const app = new Hono().basePath("api");
 
@@ -21,14 +16,12 @@ app.use(poweredBy({ serverName: "Deno Deploy" }))
 app.get("/", (c) => {
   return c.json({ success: true, message: "hello hono" });
 });
-app.post(
-  "login",
-  zValidator("json", schema),
-  (c) => {
-    return c.json({ success: true, message: "login success" });
-  },
-);
-app.route("/book", book);
+
+const kv = await Deno.openKv();
+const bookRepository = new BookKvRepository(kv);
+const bookService = new BookService(bookRepository);
+const bookController = createBookController(bookService);
+app.route("/books", bookController);
 
 app.notFound((c) => c.json({ success: false, message: "Not found" }, 404));
 app.onError((err, c) => {
