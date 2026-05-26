@@ -1,5 +1,5 @@
 import { SupabaseClient } from "@supabase/supabase-js";
-import { BookRepository } from "./interface/bookRepository.ts";
+import { BookRepository } from "./interface/BookRepository.ts";
 import { Filters } from "./interface/Repository.ts";
 import { Book, CreateBookDto, UpdateBookDto } from "../model/book.ts";
 
