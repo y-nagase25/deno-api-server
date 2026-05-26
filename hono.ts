@@ -3,9 +3,10 @@ import { poweredBy } from "hono/powered-by";
 import { logger } from "hono/logger";
 import { HTTPException } from "hono/http-exception";
 import { verifyApiKey } from "./middleware.ts";
+import supabase from "./lib/supabase.ts";
 import { createBookController } from "./controller/bookController.ts";
 import { BookService } from "./service/BookService.ts";
-import { BookKvRepository } from "./repository/BookKvRepository.ts";
+import { BookSbRepository } from "./repository/BookSbRepository.ts";
 
 const app = new Hono().basePath("api");
 
@@ -17,8 +18,10 @@ app.get("/", (c) => {
   return c.json({ success: true, message: "hello hono" });
 });
 
-const kv = await Deno.openKv();
-const bookRepository = new BookKvRepository(kv);
+// const kv = await Deno.openKv();
+// const bookRepository = new BookKvRepository(kv);
+const bookRepository = new BookSbRepository(supabase);
+
 const bookService = new BookService(bookRepository);
 const bookController = createBookController(bookService);
 app.route("/books", bookController);
