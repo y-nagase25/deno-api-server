@@ -1,5 +1,5 @@
 import { Book, CreateBookDto, UpdateBookDto } from "../model/book.ts";
-import { BookRepository } from "./interface/bookRepository.ts";
+import { BookRepository } from "./interface/BookRepository.ts";
 import { Filters } from "./interface/Repository.ts";
 
 const KV_PREFIX = ["books"] as const;
